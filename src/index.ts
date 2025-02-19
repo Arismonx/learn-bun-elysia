@@ -1,7 +1,7 @@
 import { Elysia, error } from "elysia";
 import { jwt } from '@elysiajs/jwt'
 import { staticPlugin } from '@elysiajs/static'
-import fs from 'fs/promises';
+import { BookController } from "./controllers/BookController";
 
 const app = new Elysia()
   .use(staticPlugin({
@@ -14,6 +14,11 @@ const app = new Elysia()
       secret: 'mamafafa'
     })
   )
+  .post('/api/book/create',BookController.create)
+  .get('/api/book/list',BookController.list)
+  .put('/api/book/update/:id',BookController.update)
+  .delete('/api/book/remove/:id',BookController.remove)
+
   .get("/", () => "Hello Elysia Framwork")
   .get('/hello', () => {
     return { message: 'hello world' }

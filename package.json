@@ -8,10 +8,15 @@
   "dependencies": {
     "@elysiajs/jwt": "^1.2.0",
     "@elysiajs/static": "^1.2.0",
+    "@prisma/client": "^6.4.0",
     "elysia": "latest"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@types/node": "^22.13.4",
+    "bun-types": "latest",
+    "prisma": "^6.4.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
   },
   "module": "src/index.js"
 }
